@@ -56,4 +56,4 @@ with open("everybody_codes_e2025_q05_p3.txt") as f:
 swords = sorted(
     [get_quality(r) for r in raw], key=cmp_to_key(compare_swords), reverse=True
 )
-print(sum([i * idx[0] for i, idx in enumerate(swords, start=1)]))
+print(sum([i * s[0] for i, s in enumerate(swords, start=1)]))
