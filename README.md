@@ -9,3 +9,4 @@
 |[Quest 4: Teeth of the Wind](https://everybody.codes/event/2025/quests/4) | [py](/quest04/main.py) |
 |[Quest 5: Fishbone Order](https://everybody.codes/event/2025/quests/5) | [py](/quest05/main.py) |
 |[Quest 6: Mentorship Matrix](https://everybody.codes/event/2025/quests/6) | [py](/quest06/main.py) |
+|[Quest 7: Namegraph](https://everybody.codes/event/2025/quests/7) | [py](/quest07/main.py) |
