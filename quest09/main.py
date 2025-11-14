@@ -13,7 +13,7 @@ def overlap(child, parent):
 with open("everybody_codes_e2025_q09_p1.txt") as f:
     lines = [line.strip().split(":")[1] for line in f]
 
-for a, b, c in permutations(lines):
+for a, b, c in permutations(lines, 3):
     if is_child(a, b, c):
         print(overlap(a, b) * overlap(a, c))
         break
@@ -22,28 +22,30 @@ for a, b, c in permutations(lines):
 with open("everybody_codes_e2025_q09_p2.txt") as f:
     lines = [line.strip().split(":")[1] for line in f]
 
-res = [
+scores = [
     overlap(a, b) * overlap(a, c)
     for a, b, c in permutations(lines, 3)
-    if is_child(a, b, c)
+    if b > c and is_child(a, b, c)
 ]
-print(sum(res) // 2)
+print(sum(scores))
 
 # Part 3
 with open("everybody_codes_e2025_q09_p3.txt") as f:
-    lines = [[int(num), dna.strip()] for num, dna in (line.split(":") for line in f)]
+    lines = [[int(num), dna.strip()] for num, dna in [line.split(":") for line in f]]
 
 trees = [
     {a[0], b[0], c[0]}
     for a, b, c in permutations(lines, 3)
-    if is_child(a[1], b[1], c[1])
+    if b > c and is_child(a[1], b[1], c[1])
 ]
 
 current_trees = trees
 trees_merged = []
 prev_len = len(current_trees)
 
-while True:
+while prev_len != len(trees_merged):
+    prev_len = len(trees_merged)
+
     trees_merged = [current_trees[0]]
     for tree_old in current_trees[1:]:
         for tree_merged in trees_merged:
@@ -52,9 +54,5 @@ while True:
                 break
         else:
             trees_merged.append(tree_old)
-
-    if prev_len == len(trees_merged):
-        break
-    prev_len = len(trees_merged)
 
 print(sum(max(trees_merged, key=len)))
