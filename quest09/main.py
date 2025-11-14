@@ -54,5 +54,6 @@ while prev_len != len(trees_merged):
                 break
         else:
             trees_merged.append(tree_old)
+    current_trees = trees_merged
 
 print(sum(max(trees_merged, key=len)))
