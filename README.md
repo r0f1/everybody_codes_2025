@@ -11,3 +11,4 @@
 |[Quest 6: Mentorship Matrix](https://everybody.codes/event/2025/quests/6) | [py](/quest06/main.py) |
 |[Quest 7: Namegraph](https://everybody.codes/event/2025/quests/7) | [py](/quest07/main.py) |
 |[Quest 8: The Art of Connection](https://everybody.codes/event/2025/quests/8) | [py](/quest08/main.py) |
+|[Quest 9: Encoded in the Scales](https://everybody.codes/event/2025/quests/9) | [py](/quest09/main.py) |
